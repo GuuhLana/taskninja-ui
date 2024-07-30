@@ -7,7 +7,8 @@ import { TarefaListaComponent } from './components/tarefa/tarefa-lista/tarefa-li
 import { TarefaFormComponent } from './components/tarefa/tarefa-form/tarefa-form.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   { path: 'lista-usuario', component: UsuarioListaComponent },
   { path: 'formulario-usuario', component: UsuarioFormComponent },
   { path: 'lista-tarefa', component: TarefaListaComponent },
