@@ -14,36 +14,24 @@ export class TarefaService {
 
   constructor(private http: HttpClient) { }
 
-  // Método para listar todas as tarefas
-  listarTarefas(): Observable<Tarefa[]> {
-    return this.http.get<Tarefa[]>(`${this.baseUrl}`)
-      .pipe(
-        catchError(this.handleError<Tarefa[]>('listarTarefas', []))
-      );
+  criarTarefa(tarefa: Tarefa): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/cadastrar`, tarefa, { responseType: 'text' as 'json' });
   }
 
-  // Método para criar uma nova tarefa
-  criarTarefa(tarefa: Tarefa): Observable<Tarefa> {
-    return this.http.post<Tarefa>(`${this.baseUrl}/cadastrar`, tarefa)
-      .pipe(
-        catchError(this.handleError<Tarefa>('criarTarefa'))
-      );
+  listarTarefasPorUsuario(id: number): Observable<Tarefa[]> {
+    return this.http.get<Tarefa[]>(`${this.baseUrl}/${id}`);
   }
 
-  // Método para deletar uma tarefa pelo ID
-  deletarTarefa(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/${id}`)
-      .pipe(
-        catchError(this.handleError<void>('deletarTarefa'))
-      );
+  obterTarefaPorId(id: number): Observable<Tarefa> {
+    return this.http.get<Tarefa>(`${this.baseUrl}/tarefa/${id}`);
   }
 
-  // Método para editar uma tarefa
-  editarTarefa(id: number, tarefa: Tarefa): Observable<Tarefa> {
-    return this.http.put<Tarefa>(`${this.baseUrl}/editar/${id}`, tarefa)
-      .pipe(
-        catchError(this.handleError<Tarefa>('editarTarefa'))
-      );
+  editarTarefa(id: number, tarefa: Tarefa): Observable<any> {
+    return this.http.put<any>(`${this.baseUrl}/${id}`, tarefa, { responseType: 'text' as 'json' });
+  }
+  
+  deletarTarefa(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/${id}`, { responseType: 'text' as 'json' });
   }
 
   // Método de tratamento de erros

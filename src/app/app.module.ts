@@ -11,9 +11,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSortModule } from '@angular/material/sort'; // Adicionado
-import { MatPaginatorModule } from '@angular/material/paginator'; // Adicionado
+import { MatSortModule } from '@angular/material/sort'; 
+import { MatPaginatorModule } from '@angular/material/paginator'; 
+import { MatSnackBarModule } from '@angular/material/snack-bar'; 
+
 
 import { LoginComponent } from './components/login/login.component';
 import { UsuarioFormComponent } from './components/usuario/usuario-form/usuario-form.component';
@@ -46,8 +50,11 @@ import { TarefaService } from './services/tarefa.service';
     MatCardModule,
     MatTableModule,
     MatIconModule,
+    MatOptionModule,
+    MatSelectModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSnackBarModule 
   ],
   providers: [UsuarioService, TarefaService],
   bootstrap: [AppComponent]

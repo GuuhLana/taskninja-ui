@@ -1,21 +1,50 @@
-<table mat-table [dataSource]="tarefas" class="mat-elevation-z8">
+<div class="tarefa-form-container">
+    <mat-card class="tarefa-form-card">
+        <form [formGroup]="tarefaForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="fill">
+                <mat-label>Nome</mat-label>
+                <input matInput formControlName="nomeTarefa">
+                <mat-error *ngIf="tarefaForm.get('nomeTarefa')!.hasError('required')">Nome é obrigatório</mat-error>
+            </mat-form-field>
 
-    <!-- Definição das colunas -->
-    <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> ID </th>
-        <td mat-cell *matCellDef="let tarefa"> {{tarefa.id}} </td>
-    </ng-container>
+            <mat-form-field appearance="fill">
+                <mat-label>Observação</mat-label>
+                <input matInput formControlName="observacao">
+                <mat-error *ngIf="tarefaForm.get('observacao')!.hasError('required')">Observação é
+                    obrigatória</mat-error>
+            </mat-form-field>
 
-    <ng-container matColumnDef="nome">
-        <th mat-header-cell *matHeaderCellDef> Nome </th>
-        <td mat-cell *matCellDef="let tarefa"> {{tarefa.nome}} </td>
-    </ng-container>
+            <mat-form-field appearance="fill">
+                <mat-label>Usuário ID</mat-label>
+                <input matInput formControlName="usuarioId" type="number">
+                <mat-error *ngIf="tarefaForm.get('usuarioId')!.hasError('required')">Usuário ID é
+                    obrigatório</mat-error>
+            </mat-form-field>
 
-    <ng-container matColumnDef="descricao">
-        <th mat-header-cell *matHeaderCellDef> Descrição </th>
-        <td mat-cell *matCellDef="let tarefa"> {{tarefa.descricao}} </td>
-    </ng-container>
+            <mat-form-field appearance="fill">
+                <mat-label>Status</mat-label>
+                <mat-select formControlName="status">
+                    <mat-option *ngFor="let status of statusOptions" [value]="status.value">
+                        {{ status.viewValue }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="tarefaForm.get('status')!.hasError('required')">Status é obrigatório</mat-error>
+            </mat-form-field>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+            <mat-form-field appearance="fill">
+                <mat-label>Prioridade</mat-label>
+                <mat-select formControlName="prioridade">
+                    <mat-option *ngFor="let prioridade of prioridadeOptions" [value]="prioridade.value">
+                        {{ prioridade.viewValue }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="tarefaForm.get('prioridade')!.hasError('required')">Prioridade é
+                    obrigatória</mat-error>
+            </mat-form-field>
+
+            <div class="form-actions">
+                <button mat-raised-button color="primary" type="submit">Salvar</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

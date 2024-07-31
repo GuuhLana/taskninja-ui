@@ -11,8 +11,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'lista-usuario', component: UsuarioListaComponent },
   { path: 'formulario-usuario', component: UsuarioFormComponent },
-  { path: 'lista-tarefa', component: TarefaListaComponent },
-  { path: 'formulario-tarefa', component: TarefaFormComponent }
+  { path: 'tarefas', component: TarefaListaComponent },
+  { path: 'tarefas/cadastrar', component: TarefaFormComponent },
+  { path: 'tarefas/editar/:id', component: TarefaFormComponent },
 ];
 
 @NgModule({
