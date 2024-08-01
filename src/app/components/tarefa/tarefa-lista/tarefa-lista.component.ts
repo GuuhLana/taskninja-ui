@@ -27,7 +27,7 @@ export class TarefaListaComponent implements OnInit {
   loadTarefas(): void {
     //A FAZER
     // Substitua pelo ID do usuário que você deseja listar as tarefas
-    const usuarioId = 2;
+    const usuarioId = 1;
 
     this.tarefaService.listarTarefasPorUsuario(usuarioId).subscribe(
       (data: Tarefa[]) => {

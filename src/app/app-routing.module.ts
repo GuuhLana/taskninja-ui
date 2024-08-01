@@ -7,10 +7,10 @@ import { TarefaListaComponent } from './components/tarefa/tarefa-lista/tarefa-li
 import { TarefaFormComponent } from './components/tarefa/tarefa-form/tarefa-form.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'lista-usuario', component: UsuarioListaComponent },
-  { path: 'formulario-usuario', component: UsuarioFormComponent },
+  { path: '', redirectTo: '/tarefas', pathMatch: 'full' },
+  // { path: 'login', component: LoginComponent },
+  // { path: 'lista-usuario', component: UsuarioListaComponent },
+  // { path: 'formulario-usuario', component: UsuarioFormComponent },
   { path: 'tarefas', component: TarefaListaComponent },
   { path: 'tarefas/cadastrar', component: TarefaFormComponent },
   { path: 'tarefas/editar/:id', component: TarefaFormComponent },
