@@ -1,61 +1,73 @@
 .cards-container {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  button {
-    margin-bottom: 16px;
-    border-radius: 4px;
-  }
-  
-  .create-button{
-    font-size: 1rem;
-  }
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px;
+  box-sizing: border-box;
+}
 
-  .card {
-    width: calc(33.333% - 32px);
-    max-width: 400px;
-    background-color: var(--second-bg-color);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 16px;
-    padding: 16px;
-    box-sizing: border-box;
-    color: var(--text-color);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card-header h3 {
-    margin: 0;
-    font-size: 1.2em;
-    color: var(--main-color);
-  }
-  
-  .card-body p {
-    margin: 8px 0;
-  }
-  
-  .card-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 8px;
-  }
-  
-  .mat-icon-button {
-    color: var(--main-color);
-  }
-  
-  .mat-icon-button:hover {
-    background-color: rgba(255, 99, 71, 0.2); /* Adaptando ao main-color */
-  }
-  
+button {
+  margin-bottom: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: #ff8a65; /* Cor destacada ao passar o mouse */
+}
+
+.create-button {
+  font-size: 1rem;
+  background-color: #1abc9c; /* Cor personalizada */
+  color: white;
+}
+
+.create-button:hover {
+  background-color: #16a085; /* Cor ao passar o mouse */
+}
+
+.card {
+  width: calc(33.333% - 32px);
+  max-width: 400px;
+  background-color: #34495e;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  padding: 16px;
+  box-sizing: border-box;
+  color: #ecf0f1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.3em;
+  color: #e74c3c; /* Cor do título */
+  font-weight: bold;
+}
+
+.card-body p {
+  margin: 8px 0;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.mat-icon-button {
+  color: #e74c3c; /* Cor personalizada dos botões */
+}
+
+.mat-icon-button:hover {
+  background-color: rgba(231, 76, 60, 0.2); /* Fundo do hover */
+}

@@ -8,7 +8,7 @@ import { TarefaFormComponent } from './components/tarefa/tarefa-form/tarefa-form
 
 const routes: Routes = [
   { path: '', redirectTo: '/tarefas', pathMatch: 'full' },
-  // { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   // { path: 'lista-usuario', component: UsuarioListaComponent },
   // { path: 'formulario-usuario', component: UsuarioFormComponent },
   { path: 'tarefas', component: TarefaListaComponent },

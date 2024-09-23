@@ -1,26 +1,34 @@
 <div class="tarefa-form-container">
     <mat-card class="tarefa-form-card">
         <form [formGroup]="tarefaForm" (ngSubmit)="onSubmit()">
+            <!-- Campo Nome -->
             <mat-form-field appearance="fill">
                 <mat-label>Nome</mat-label>
                 <input matInput formControlName="nomeTarefa">
-                <mat-error *ngIf="tarefaForm.get('nomeTarefa')!.hasError('required')">Nome é obrigatório</mat-error>
+                <mat-error *ngIf="tarefaForm.get('nomeTarefa')!.hasError('required')">
+                    Nome é obrigatório
+                </mat-error>
             </mat-form-field>
 
+            <!-- Campo Observação -->
             <mat-form-field appearance="fill">
                 <mat-label>Observação</mat-label>
                 <input matInput formControlName="observacao">
-                <mat-error *ngIf="tarefaForm.get('observacao')!.hasError('required')">Observação é
-                    obrigatória</mat-error>
+                <mat-error *ngIf="tarefaForm.get('observacao')!.hasError('required')">
+                    Observação é obrigatória
+                </mat-error>
             </mat-form-field>
 
+            <!-- Campo Usuário ID -->
             <mat-form-field appearance="fill">
                 <mat-label>Usuário ID</mat-label>
                 <input matInput formControlName="usuarioId" type="number">
-                <mat-error *ngIf="tarefaForm.get('usuarioId')!.hasError('required')">Usuário ID é
-                    obrigatório</mat-error>
+                <mat-error *ngIf="tarefaForm.get('usuarioId')!.hasError('required')">
+                    Usuário ID é obrigatório
+                </mat-error>
             </mat-form-field>
 
+            <!-- Campo Status -->
             <mat-form-field appearance="fill">
                 <mat-label>Status</mat-label>
                 <mat-select formControlName="status">
@@ -28,9 +36,12 @@
                         {{ status.viewValue }}
                     </mat-option>
                 </mat-select>
-                <mat-error *ngIf="tarefaForm.get('status')!.hasError('required')">Status é obrigatório</mat-error>
+                <mat-error *ngIf="tarefaForm.get('status')!.hasError('required')">
+                    Status é obrigatório
+                </mat-error>
             </mat-form-field>
 
+            <!-- Campo Prioridade -->
             <mat-form-field appearance="fill">
                 <mat-label>Prioridade</mat-label>
                 <mat-select formControlName="prioridade">
@@ -38,11 +49,14 @@
                         {{ prioridade.viewValue }}
                     </mat-option>
                 </mat-select>
-                <mat-error *ngIf="tarefaForm.get('prioridade')!.hasError('required')">Prioridade é
-                    obrigatória</mat-error>
+                <mat-error *ngIf="tarefaForm.get('prioridade')!.hasError('required')">
+                    Prioridade é obrigatória
+                </mat-error>
             </mat-form-field>
 
+            <!-- Botões de ação -->
             <div class="form-actions">
+                <button mat-raised-button color="warn" type="button" (click)="returnToList()">Voltar</button>
                 <button mat-raised-button color="primary" type="submit">Salvar</button>
             </div>
         </form>

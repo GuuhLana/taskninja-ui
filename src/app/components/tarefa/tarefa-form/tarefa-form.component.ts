@@ -54,6 +54,10 @@ export class TarefaFormComponent implements OnInit {
     });
   }
 
+  returnToList(){
+    this.router.navigate(['/tarefas']);
+  }
+
   loadTarefa(id: number) {
     this.tarefaService.obterTarefaPorId(id).subscribe((tarefa: Tarefa) => {
       this.tarefaForm.patchValue(tarefa);
