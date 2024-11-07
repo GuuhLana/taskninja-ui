@@ -6,17 +6,21 @@
             <h3>{{ tarefa.nomeTarefa }}</h3>
         </div>
         <div class="card-body">
-            <p><strong>ID:</strong> {{ tarefa.id }}</p>
             <p><strong>Observação:</strong> {{ tarefa.observacao }}</p>
             <p><strong>Status:</strong> {{ tarefa.status }}</p>
             <p><strong>Prioridade:</strong> {{ tarefa.prioridade }}</p>
         </div>
         <div class="card-actions">
-            <button mat-icon-button color="warn" (click)="deletarTarefa(tarefa.id)">
-                <mat-icon>delete</mat-icon>
+            <button mat-icon-button color="primary" (click)="concluirTarefa(tarefa.id)">
+                <mat-icon>check</mat-icon>
             </button>
+
             <button mat-icon-button color="primary" (click)="editarTarefa(tarefa.id)">
                 <mat-icon>edit</mat-icon>
+            </button>
+
+            <button mat-icon-button color="warn" (click)="deletarTarefa(tarefa.id)">
+                <mat-icon>delete</mat-icon>
             </button>
         </div>
     </div>

@@ -53,6 +53,19 @@ export class TarefaListaComponent implements OnInit {
     );
   }
 
+  concluirTarefa(id: number): void {
+    this.tarefaService.concluirTarefa(id).subscribe(
+      () => {
+        this.snackBar.open('Tarefa concluida com sucesso', 'Fechar', { duration: 3000 });
+        this.loadTarefas();
+      },
+      (error) => {
+        console.error('Erro ao concluir tarefa:', error);
+        this.snackBar.open('Erro ao concluir tarefa', 'Fechar', { duration: 3000 });
+      }
+    );
+  }
+
   editarTarefa(id: number): void {
     this.router.navigate(['tarefas/editar/', id]);
   }

@@ -11,6 +11,7 @@ import { Tarefa } from '../interfaces/Tarefa';
 export class TarefaService {
 
   private baseUrl: string = 'http://localhost:8080/tarefas'; // URL base da API
+  private concluirUrl: string = 'http://localhost:8080/tarefas/concluir'; // URL base da API
 
   constructor(private http: HttpClient) { }
 
@@ -32,6 +33,10 @@ export class TarefaService {
   
   deletarTarefa(id: number): Observable<any> {
     return this.http.delete<any>(`${this.baseUrl}/${id}`, { responseType: 'text' as 'json' });
+  }
+
+  concluirTarefa(id: number): Observable<any> {
+    return this.http.put<any>(`${this.concluirUrl}/${id}`, { responseType: 'text' as 'json' });
   }
 
   // Método de tratamento de erros
